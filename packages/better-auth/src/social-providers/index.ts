@@ -18,6 +18,7 @@ import { z } from "zod";
 import { vk } from "./vk";
 import { kick } from "./kick";
 import { zoom } from "./zoom";
+import { wechat } from "./wechat"; // Import WeChat provider
 export const socialProviders = {
 	apple,
 	discord,
@@ -37,12 +38,31 @@ export const socialProviders = {
 	roblox,
 	vk,
 	zoom,
+	wechat, // Add WeChat to the object
 };
 
-export const socialProviderList = Object.keys(socialProviders) as [
+// Manually list providers for stricter typing and Zod enum generation
+export const socialProviderList = [
+	"apple",
+	"discord",
+	"facebook",
 	"github",
-	...(keyof typeof socialProviders)[],
-];
+	"microsoft",
+	"google",
+	"spotify",
+	"twitch",
+	"twitter",
+	"dropbox",
+	"kick",
+	"linkedin",
+	"gitlab",
+	"tiktok",
+	"reddit",
+	"roblox",
+	"vk",
+	"zoom",
+	"wechat", // Add wechat here
+] as const; // Use 'as const' for literal types
 
 export const SocialProviderListEnum = z.enum(socialProviderList, {
 	description: "OAuth2 provider to use",
@@ -76,5 +96,6 @@ export * from "./roblox";
 export * from "./vk";
 export * from "./zoom";
 export * from "./kick";
+export * from "./wechat"; // Export WeChat types and function
 
 export type SocialProviderList = typeof socialProviderList;
