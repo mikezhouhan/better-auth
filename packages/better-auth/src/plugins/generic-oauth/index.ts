@@ -19,7 +19,7 @@ import { refreshAccessToken } from "../../oauth2/refresh-access-token";
 /**
  * Configuration interface for generic OAuth providers.
  */
-interface GenericOAuthConfig {
+export interface GenericOAuthConfig {
 	/** Unique identifier for the OAuth provider */
 	providerId: string;
 	/**
@@ -640,7 +640,10 @@ export const genericOAuth = (options: GenericOAuthOptions) => {
 							return redirectOnError("email_doesn't_match");
 						}
 						const existingAccount =
-							await ctx.context.internalAdapter.findAccount(userInfo.id);
+							await ctx.context.internalAdapter.findAccountByProviderId(
+								userInfo.id,
+								provider.providerId,
+							);
 						if (existingAccount) {
 							if (existingAccount.userId !== link.userId) {
 								return redirectOnError(
@@ -671,6 +674,8 @@ export const genericOAuth = (options: GenericOAuthOptions) => {
 									accessTokenExpiresAt: tokens.accessTokenExpiresAt,
 									refreshTokenExpiresAt: tokens.refreshTokenExpiresAt,
 									scope: tokens.scopes?.join(","),
+									refreshToken: tokens.refreshToken,
+									idToken: tokens.idToken,
 								});
 							if (!newAccount) {
 								return redirectOnError("unable_to_link_account");
