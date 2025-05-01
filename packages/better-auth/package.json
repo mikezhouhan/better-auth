@@ -1,6 +1,6 @@
 {
   "name": "minifold-better-auth",
-  "version": "1.1.21",
+  "version": "1.1.22",
   "description": "The most comprehensive authentication library for TypeScript.",
   "type": "module",
   "repository": {
