@@ -143,7 +143,7 @@ export const wechat = (options: WeChatOptions): OAuthProvider<WeChatProfile> => 
          user: {
            id: userId,
            name: profile.nickname,
-           email: null, // WeChat does not provide email
+           email: `${userId}@wechat.com`, // Generated virtual email for WeChat
            image: profile.headimgurl,
            emailVerified: false, // No email, so not verified
            ...userMap, // Apply custom mapping
