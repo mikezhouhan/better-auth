@@ -1,6 +1,6 @@
 {
-  "name": "@better-auth/expo",
-  "version": "1.2.8-beta.5",
+  "name": "@minifold-better-auth/expo",
+  "version": "1.2.8-beta.6",
   "description": "",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
@@ -37,7 +37,7 @@
   "license": "ISC",
   "devDependencies": {
     "@better-fetch/fetch": "catalog:",
-    "better-auth": "workspace:*",
+    "better-auth": "workspace:minifold-better-auth@*",
     "better-sqlite3": "^11.6.0",
     "expo-constants": "~17.0.8",
     "expo-crypto": "^13.0.2",
@@ -48,7 +48,7 @@
     "vitest": "^1.6.0"
   },
   "peerDependencies": {
-    "better-auth": "workspace:*"
+    "better-auth": "workspace:minifold-better-auth@*"
   },
   "dependencies": {
     "@better-fetch/fetch": "catalog:",
