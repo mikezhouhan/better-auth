@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "pnpm migrate:auth && astro dev --port 3000",
-    "migrate:auth": "pnpx @better-auth/cli migrate",
+    "migrate:auth": "pnpx @minifold-better-auth/cli migrate",
     "build": "astro check && astro build",
     "preview": "astro preview"
   },
@@ -21,7 +21,7 @@
     "@oslojs/encoding": "^1.1.0",
     "@types/better-sqlite3": "^7.6.12",
     "astro": "^4.16.18",
-    "better-auth": "workspace:*",
+    "better-auth": "workspace:minifold-better-auth@*",
     "better-sqlite3": "^11.6.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

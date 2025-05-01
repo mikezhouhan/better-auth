@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "pnpx @better-auth/cli migrate && nuxt dev",
+    "dev": "pnpx @minifold-better-auth/cli migrate && nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -16,7 +16,7 @@
     "@unovis/vue": "1.4.3-beta.0",
     "@vee-validate/zod": "^4.14.7",
     "@vueuse/core": "^11.3.0",
-    "better-auth": "workspace:*",
+    "better-auth": "workspace:minifold-better-auth@*",
     "better-sqlite3": "^11.6.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
