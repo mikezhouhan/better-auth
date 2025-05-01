@@ -1,4 +1,4 @@
-import type { Prettify } from "../types";
+import type { Prettify } from "../types/helper";
 import { apple } from "./apple";
 import { discord } from "./discord";
 import { facebook } from "./facebook";
@@ -12,6 +12,7 @@ import { dropbox } from "./dropbox";
 import { linkedin } from "./linkedin";
 import { gitlab } from "./gitlab";
 import { reddit } from "./reddit";
+import { wechat } from "./wechat";
 import { z } from "zod";
 export const socialProviders = {
 	apple,
@@ -27,11 +28,13 @@ export const socialProviders = {
 	linkedin,
 	gitlab,
 	reddit,
+	wechat,
 };
 
 export const socialProviderList = Object.keys(socialProviders) as [
 	"github",
 	...(keyof typeof socialProviders)[],
+	"wechat",
 ];
 
 export type SocialProviderList = typeof socialProviderList;
@@ -63,3 +66,4 @@ export * from "./dropbox";
 export * from "./linkedin";
 export * from "./gitlab";
 export * from "./reddit";
+export * from "./wechat";

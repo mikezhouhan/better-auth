@@ -28,6 +28,7 @@ export interface WeChatProfile {
 // Define WeChat specific options extending the base ProviderOptions
 export interface WeChatOptions extends ProviderOptions<WeChatProfile> {
   platformType?: "OfficialAccount" | "WebsiteApp";
+  disableDefaultScope?: boolean;
 }
 
 export const wechat = (options: WeChatOptions): OAuthProvider<WeChatProfile> => {
@@ -152,6 +153,5 @@ export const wechat = (options: WeChatOptions): OAuthProvider<WeChatProfile> => 
     },
     // Optional: Implement refreshAccessToken if needed and supported by WeChat API for your platformType
     // async refreshAccessToken(refreshToken: string): Promise<OAuth2Tokens> { ... }
-    options, // Pass down the original options
   } satisfies OAuthProvider<WeChatProfile>;
 };
